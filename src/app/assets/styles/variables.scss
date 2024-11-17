@@ -1,0 +1,177 @@
+@use "sass:map";
+@use "sass:color";
+
+$colors: (
+  "text-primary": #000,
+  "text-secondary": #696969,
+  "text-tertiary": #999999,
+  "text-white": #fff,
+  "bg-primary": #fff,
+  "bg-card-elevated": #f3f4f6,
+  "bg-light-purple": #f5f6ff,
+  "brand-primary-200": #7000ff14,
+  "brand-primary-300": #bba2fd,
+  "brand-primary-500": #7000ff,
+  "brand-primary-600": #5b34c1,
+  "brand-secondary-300": #f8bcaf,
+  "brand-secondary-500": #ff5733,
+  "brand-secondary-600": #cc5a41,
+  "brand-yellow-300": #fdf5a6,
+  "brand-yellow-500": #ffff54,
+  "brand-yellow-600": #f9de6d,
+  "brand-green-300": #dcf0af,
+  "brand-green-500": #c4ed70,
+  "brand-green-600": #9ded70,
+  "brand-lightblue-300": #c5ecfd,
+  "brand-lightblue-500": #90ddfb,
+  "brand-lightblue-600": #54b8f9,
+  "brand-pink-300": #f19eda,
+  "brand-pink-500": #ec616a,
+  "brand-pink-600": #ea3e68,
+  "static-black": #000,
+  "static-white": #fff,
+  "transparency-black": #00000099,
+  "transparency-white": #ffffff99,
+  "grey-50": #f3f4f6,
+  "grey-100": #e5e5e5,
+  "grey-150": #ebebeb,
+  "grey-200": #cccccc,
+  "grey-300": #b3b3b3,
+  "grey-400": #999999,
+  "grey-500": #808080,
+  "grey-800": #4e4d4d,
+  "grey-900": #1d1d1d,
+  "global-grey-20": #ebedf5,
+  "success-500": #09b849,
+  "warning-500": #ffa41d,
+  "danger-500": #f93d3d
+);
+
+$typography: (
+  "h40": (
+    4rem,
+    700,
+    4.8rem
+  ),
+  "h32": (
+    3.2rem,
+    700,
+    4rem
+  ),
+  "h24": (
+    2.4rem,
+    700,
+    2.8rem
+  ),
+  "h20": (
+    2rem,
+    700,
+    2.4rem
+  ),
+  "h16": (
+    1.6rem,
+    700,
+    2rem
+  ),
+  "h14": (
+    1.4rem,
+    700,
+    2rem
+  ),
+  "h12": (
+    1.2rem,
+    700,
+    1.6rem
+  ),
+  "h10": (
+    1rem,
+    700,
+    1.3rem
+  ),
+  "s24": (
+    2.4rem,
+    600,
+    3.36rem
+  ),
+  "s20": (
+    2rem,
+    600,
+    2.8rem
+  ),
+  "s16": (
+    1.6rem,
+    600,
+    2.24rem
+  ),
+  "s14": (
+    1.4rem,
+    600,
+    1.96rem
+  ),
+  "s12": (
+    1.2rem,
+    600,
+    1.68rem
+  ),
+  "s10": (
+    1rem,
+    600,
+    1.4rem
+  ),
+  "t20": (
+    2rem,
+    500,
+    3.2rem
+  ),
+  "t16": (
+    1.6rem,
+    500,
+    2.56rem
+  ),
+  "t14": (
+    1.4rem,
+    500,
+    2.24rem
+  ),
+  "t12": (
+    1.2rem,
+    500,
+    1.92rem
+  ),
+  "t10": (
+    1rem,
+    500,
+    1.6rem
+  )
+);
+
+$column-map: (
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 5,
+  xxl: 6
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  s: 640px,
+  m: 1024px,
+  l: 1280px,
+  xl: 1536px,
+  xxl: 1920px
+);
+
+@function HexToRGB($hex) {
+  @return color.channel($hex, "red", $space: rgb), color.channel($hex, "green", $space: rgb), color.channel($hex, "blue", $space: rgb);
+}
+
+:root {
+  --rem: 10px;
+  font-size: var(--rem);
+
+  @each $key, $value in $colors {
+    --#{$key}: #{$value};
+    --#{$key}-rgb: #{HexToRGB($value)};
+  }
+}

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'TT Uzum';
+  src: url('./Uzum/TT_Uzum_Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Uzum';
+  src: url('./Uzum/TT_Uzum_DemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Uzum';
+  src: url('./Uzum/TT_Uzum_Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

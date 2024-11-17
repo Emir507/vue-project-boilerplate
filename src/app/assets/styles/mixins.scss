@@ -1,0 +1,10 @@
+@use "sass:list";
+@use "sass:map";
+@use "variables" as *;
+
+@mixin getFont($font-type: "t14") {
+  font-size: list.nth(map.get($typography, $font-type), 1) !important;
+  font-weight: list.nth(map.get($typography, $font-type), 2) !important;
+  line-height: list.nth(map.get($typography, $font-type), 3) !important;
+  @content;
+}
